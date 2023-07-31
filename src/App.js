@@ -3,7 +3,7 @@ import { convartStringToPascalCase } from "./utility/ConvartPascalCase";
 
 const App = () => {
   const [userInput, setUserInput] = useState('');
-  const pascalCaseStr = convartStringToPascalCase(userInput);
+  const pascalCaseStr = convartStringToPascalCase(userInput?.trim());
 
   const textRef = useRef(null);
 
