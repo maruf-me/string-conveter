@@ -5,6 +5,10 @@ const App = () => {
   const [userInput, setUserInput] = useState('');
   const pascalCaseStr = convartStringToPascalCase(userInput?.trim());
 
+  const stringifyInput = JSON.stringify(userInput);
+  const stringifyValue = JSON.stringify(pascalCaseStr);
+  const stringify = `${stringifyValue}: ${stringifyInput}`;
+
   const textRef = useRef(null);
 
   const handleCopy = () => {
@@ -35,9 +39,14 @@ const App = () => {
           <p>Expected Value: { }</p>
           <div className="bg-gray-200 p-2 rounded-lg shadow-sm border border-gray-300">
 
-            <textarea ref={textRef} className="break-all min-h-[10rem] w-[30rem] bg-gray-300 px-1 rounded focus:outline-green-200" value={pascalCaseStr} readOnly />
-            <div className={`${pascalCaseStr ? 'h-auto opacity-100 visible duration-500' : 'h-0 opacity-0 invisible'} w-full flex justify-end gap-4`}>
+            <textarea
+              readOnly
+              ref={textRef}
+              value={userInput ? stringify : ''}
+              className="break-all min-h-[10rem] w-[30rem] bg-gray-300 px-1 rounded focus:outline-green-200"
+            />
 
+            <div className={`${pascalCaseStr ? 'h-auto opacity-100 visible duration-500' : 'h-0 opacity-0 invisible'} w-full flex justify-end gap-4`}>
               <button onClick={() => setUserInput('')} className="bg-red-300 px-3 py-1 rounded">Clear</button>
               <button onClick={handleCopy} className="bg-green-300 px-3 py-1 rounded">Copy</button>
             </div>
