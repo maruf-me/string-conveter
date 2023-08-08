@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className="bg-gray-100 h-screen flex items-center justify-center">
-      <div className="space-y-4">
+      <div className="space-y-4 min-w-[30rem] max-w-[42rem]">
 
         <div className="space-y-1">
           <label htmlFor="input" className="block">Input</label>
@@ -30,7 +30,7 @@ const App = () => {
             type="text"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
-            className="border rounded-md py-2 px-3 shadow-sm focus:outline-none"
+            className="border rounded-md py-2 px-3 shadow-sm focus:outline-none w-full"
           />
         </div>
 
@@ -43,7 +43,7 @@ const App = () => {
               readOnly
               ref={textRef}
               value={userInput ? stringify : ''}
-              className="break-all min-h-[10rem] w-[30rem] bg-gray-300 px-1 rounded focus:outline-green-200"
+              className="break-all min-h-[10rem] w-full bg-gray-300 px-1 rounded focus:outline-green-200"
             />
 
             <div className={`${pascalCaseStr ? 'h-auto opacity-100 visible duration-500' : 'h-0 opacity-0 invisible'} w-full flex justify-end gap-4`}>

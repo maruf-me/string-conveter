@@ -5,7 +5,7 @@ export const convartStringToPascalCase = (str) => {
 
     // Capitalize the first letter of each word
     const capitalizedWords = words.map(word => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
+        return word.charAt(0).toLowerCase() + word.slice(1);
     });
 
     // Join the words back together with underscores in between
